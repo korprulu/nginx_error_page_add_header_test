@@ -1,0 +1,12 @@
+services:
+  go_app:
+    build:
+      context: .
+
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - go_app
